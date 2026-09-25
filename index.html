@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Business Data Assistant</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .input-area {
+            display: flex;
+            gap: 10px;
+        }
+
+        input {
+            flex: 1;
+            padding: 12px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #answer {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f4f4f4;
+            border-radius: 8px;
+            min-height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>AI Business Data Assistant</h1>
+
+    <div class="input-area">
+        <input
+            type="text"
+            id="question"
+            placeholder="Ask a business question..."
+        >
+
+        <button onclick="askQuestion()">Ask</button>
+    </div>
+
+    <div id="answer">
+        Your answer will appear here.
+    </div>
+
+    <script>
+        async function askQuestion() {
+
+            const question = document.getElementById("question").value;
+            const answerBox = document.getElementById("answer");
+
+            if (!question) {
+                answerBox.innerText = "Please enter a question.";
+                return;
+            }
+
+            answerBox.innerText = "Thinking...";
+
+            const response = await fetch("http://127.0.0.1:8000/ask", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    question: question
+                })
+            });
+
+            const data = await response.json();
+
+            answerBox.innerText = data.answer;
+        }
+    </script>
+
+</body>
+</html>
