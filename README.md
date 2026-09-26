@@ -4,6 +4,16 @@ An AI-powered business data assistant that allows users to ask business question
 
 The application uses Gemini to convert natural-language questions into SQL queries, executes those queries on PostgreSQL, and then converts the database results into clear business-friendly answers.
 
+## 🖥️ Demo
+
+The application allows users to ask business questions in natural language and receive answers from the PostgreSQL database through an AI-powered interface.
+
+**Example:**
+
+> **Question:** Which product generated the highest revenue?
+
+> **Answer:** The product that generated the highest revenue is the Laptop.
+
 ## 🚀 Features
 
 - Ask business questions using natural language
