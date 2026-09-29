@@ -16,6 +16,7 @@ The application allows users to ask business questions in natural language and r
 
 ## 🚀 Features
 
+
 - Ask business questions using natural language
 - Automatically generate PostgreSQL queries using Gemini
 - Execute queries on a PostgreSQL sales database
@@ -37,19 +38,16 @@ The application allows users to ask business questions in natural language and r
 
 ## 🏗️ How It Works
 
-```text
-User Question
-      ↓
-   Gemini AI
-      ↓
-SQL Query Generation
-      ↓
-PostgreSQL Database
-      ↓
-Database Result
-      ↓
-   Gemini AI
-      ↓
-Business-Friendly Answer
-      ↓
-     User
+The system follows this architecture:
+
+
+
+
+Workflow
+1. User asks a business question through the web interface.
+2. FastAPI receives the request.
+3. Gemini AI converts the natural-language question into a SQL query.
+4. PostgreSQL executes the generated read-only query.
+5. The database result is returned to Gemini AI.
+6. Gemini AI converts the result into a clear, business-friendly answer.
+7. The answer is displayed to the User.
