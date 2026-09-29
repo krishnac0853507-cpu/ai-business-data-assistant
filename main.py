@@ -140,9 +140,10 @@ def ask_question(data: Question):
     Include important numbers when available. 
     For all monetary values, ALWAYS use Indian Rupees (₹), never $ or USD.
     Format Indian currency using the Indian numbering system when appropriate.
-    Do not mention SQL, Python, Gemini, or technical implementation details. 
+    Do not mention SQL, Python, Gemini, or technical implementation details.
+    Do not use markdown formatting such as **bold**, *italics*, or bullet points.
     """
-    
+
     answer_response = client.models.generate_content(
         model="gemini-3.6-flash",
         contents=answer_prompt
