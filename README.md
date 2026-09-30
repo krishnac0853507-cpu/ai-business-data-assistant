@@ -105,9 +105,4 @@ On Windows PowerShell:
 Then open the application in your browser.
 
 
-### 1. Clone the repository
 
-```bash
-git clone https://github.com/krishnac0853507-cpu/ai-business-data-assistant.git
-cd ai-business-data-assistant
-```
