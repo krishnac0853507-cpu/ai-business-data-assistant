@@ -39,6 +39,7 @@ Database structure:
 {database_schema}
 
 User question:
+
 {question}
 
 Generate ONLY one PostgreSQL SELECT query needed to answer the question.
